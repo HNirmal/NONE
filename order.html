@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--This will make the website responsive for different screen sizes-->
+    <link rel="stylesheet" href="Css.css">
+    <link rel="stylesheet" href="order.css">
+    <title>Order Page</title>
+</head>
+
+<body class="order-body">
+    <header id="mainHeader">
+        <!--Header Logo (Website Logo) -->
+        <a href="index.html"> <img src="Order Page/Website Logo.jpg" alt="Logo" id="logo"> </a>
+
+        <!--Navigation Bar-->
+        <nav class="navbar">
+            <div class="topnav" id="myTopnav">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="diary.html">Dairy Products</a>
+                <a href="vegetables.html">Vegetables</a>
+                <a href="fruits.html">Fruits</a>
+                <a href="meat.html">Meats & Seafood</a>
+                <a href="baking.html">Baking & Cooking Ingredients</a>
+                <a href="cosmetics.html">Cosmetics and Skincare</a>
+                <a href="order.html" class="active">Order Page</a>
+                <a href="regpage.html">Loyalty Registration</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Order page heading -->
+    <center>
+        <h1><b><u>ORDER PAGE</u></b></h1>
+    </center>
+
+    <!-- Assignment 2 Starts here -->
+    <main>
+        <div class="container">
+            <section id="grocery-sections">
+                <div class="category">
+                    <h2>Fruits</h2>
+                    <ul id="fruits-list"></ul>
+                </div>
+
+                <br>
+
+                <div class="category">
+                    <h2>Vegetables</h2>
+                    <ul id="vegetables-list"></ul>
+                </div>
+                <br>
+
+                <div class="category">
+                    <h2>Dairy Produce</h2>
+                    <ul id="dairy-list"></ul>
+                </div>
+                <br>
+
+                <div class="category">
+                    <h2>Meat & Seafood</h2>
+                    <ul id="meat-seafood-list"></ul>
+                </div>
+                <br>
+
+                <div class="b-category">
+                    <h2>Baking and Cooking Ingredients</h2>
+                    <ul id="baking-cooking-list"></ul>
+                </div>
+
+                <div class="category">
+                    <h2>Cosmetics and Skincare</h2>
+                    <ul id="skincare-products-list"></ul>
+                </div>
+            </section>
+
+            <section id="order-summary">
+                <h2><u>Current Order</u></h2>
+                <table id="order-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <p>Total: Rs <span id="total-price">0.00</span></p>
+                <a href="buy.html"><button id="buy-now">Buy Now</button></a>
+                <button id="add-to-favourites">Add to Favourites</button>
+                <button id="apply-favourites">Apply Favourites</button>
+            </section>
+        </div>
+    </main>
+
+    <script src="order.js"></script>
+</body>
+
+<br><br>
+
+<footer>
+    <div class="footer-content">
+        <br>
+        <h3><b>K.S.P SUPER</b></h3>
+        <p>"Our Supermarket discovers from farm-fresh produce to pantry staples and gourmet treats, we're here to make your shopping experience convenient, enjoyable, and full of flavor."</p>
+    </div>
+    <div class="footer-bottom">
+        <p><center>Copyright &copy; 2024 All rights reserved!</center></p>
+    </div>
+</footer>
+</html>

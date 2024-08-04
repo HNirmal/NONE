@@ -1,0 +1,105 @@
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+#grocery-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    flex: 2;
+}
+
+.category {
+    flex: 1;
+    min-width: 200px;
+    background-color: #faf3b8;
+    width: 500px;
+    align-items: center;
+}
+
+.b-category {
+    flex: 1;
+    min-width: 200px;
+    background-color: #faf3b8;
+    
+}
+
+.b-category h2 {
+    background-color: #faf3b8;
+    padding: 10px;
+    text-align: left;
+}
+
+.category h2 {
+    background-color: #faf3b8;
+    padding: 10px;
+    text-align: center;
+}
+
+.category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.category li {
+    margin: 10px 0;
+}
+
+.category button {
+    margin-left: 10px;
+    background-color: #f7eb7f;
+}
+
+.b-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.b-category li {
+    margin: 10px 0;
+}
+
+.b-category button {
+    margin-left: 10px;
+    background-color: #f7eb7f;
+}
+
+#order-summary {
+    flex: 1;
+    margin-left: 20px;
+    background-color: #faf3b8;
+    padding: 1em;
+    border: 1px solid #faf3b8;
+}
+
+#order-summary h2 {
+    text-align: center;
+}
+
+#order-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#order-summary th, #order-summary td {
+    border: 1px solid #faf3b8;
+    padding: 8px;
+}
+
+#order-summary th {
+    background-color: #faf3b8;
+}
+
+#order-summary button {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #f7eb7f;
+}
+
+#fruits-list{
+    align-items: center;
+}

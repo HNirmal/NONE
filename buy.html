@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--This will make the website responsive for different screen sizes-->
+    <link rel="stylesheet" href="Css.css">
+    <title>Order Summary</title>
+    <style>
+        /* Add popup styles */
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body class="order-body">
+    <header id="mainHeader">
+        <!--Header Logo (Website Logo) -->
+        <a href="index.html"> <img src="Order Page/Website Logo.jpg" alt="Logo" id="logo"> </a>
+
+        <!--Navigation Bar-->
+        <nav class="navbar">
+            <div class="topnav" id="myTopnav">
+                <a href="index.html">Home</a>
+                <a href="aboutus.html">About Us</a>
+                <a href="diary.html">Dairy Products</a>
+                <a href="vegetables.html">Vegetables</a>
+                <a href="fruits.html">Fruits</a>
+                <a href="meat.html">Meats & Seafood</a>
+                <a href="baking.html">Baking & Cooking Ingredients</a>
+                <a href="cosmetics.html">Cosmetics and Skincare</a>
+                <a href="order.html" class="active">Order Page</a>
+                <a href="regpage.html">Loyalty Registration</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Order Summary heading -->
+    <center>
+        <h2><b><u>ORDER SUMMARY</u></b></h2>
+    </center>
+
+    <main>
+        <!-- Order Details Section -->
+        <section id="order-summary">
+            <table id="order-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <h3><b>Total : Rs <span id="total-price">0.00</span></b></h3>
+        </section>
+
+        <!-- Billing and Payment Form -->
+        <section>
+            <div class="order-form">   
+                <form class="order-form-body" onsubmit="return handleOrderSubmit(event)">
+                    <h3 class="order-heading"><u>Billing Details</u></h3>
+                    <br>
+                    <h1 class="order-subheading">Name: </h1><input type="text" name="name" required class="name" placeholder="Enter Your Name"> <span class="star">*</span><br><br>      
+                    <h1 class="order-subheading">Phone number:</h1> <input type="tel" name="phoneno" minlength="10" maxlength="11" placeholder="Enter Phone Number" required class="phoneno2"><span class="star">*</span><br><br>
+                    <h1 class="order-subheading">Email: </h1><input type="email" name="email" required class="email2" placeholder="Enter Your Email"> <span class="star">*</span><br><br>      
+                    <h1 class="order-subheading">Address: </h1><input type="text" name="address" required class="address" placeholder="Enter Your Address"> <span class="star">*</span><br><br>      
+                    <h1 class="order-subheading">City:</h1> <input type="text" name="city" required class="city" placeholder="Enter Your City"> <span class="star">*</span><br><br>      
+                    <h1 class="order-subheading">Zip Code: </h1><input type="text" name="zip" required class="zipcode" placeholder="Enter Your City Zipcode"> <span class="star">*</span><br>        
+                    <br><hr>
+                    <h3 class="order-heading"><u>Payment Details</u></h3>
+                    <br>
+                    <h1 class="order-subheading">Payment Method:</h1> <select  name="payment-method" class="payment">
+                        <option value="credit-card">Visa</option>
+                        <option value="paypal">Master</option></select><br><br>
+                    <h1 class="order-subheading"> Card Number: </h1><input type="text" name="card-number" required class="cardno" placeholder="Enter Your Card Number"> <span class="star">*</span><br><br>      
+                    <h1 class="order-subheading"> Expiration Date:</h1> <input type="month" name="expiration-date" minlength="16" maxlength="16" required class="exdate" placeholder="MM / YY"> <span class="star">*</span><br><br>      
+                    <h1 class="order-subheading"> CVV: </h1><input type="text" name="cvv" required class="cvv" placeholder="Enter Your CVV"> <span class="star">*</span>
+                    <br><br><br><br>
+
+                    <!-- Order Button -->
+                    <button type="submit" class="order-btn"><b>Order Now</b></button> 
+                    <br><br><br><br>
+                </form>
+
+            </div>
+
+            <!-- Popup Modal -->
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <span id="closeButton" class="close">&times;</span>
+                    <h2>Thank you for your order!</h2>
+                    <p>Your estimated delivery date is: <span id="deliveryDate"></span></p>
+                </div>
+            </div>
+            
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <br>
+            <h3><b>K.S.P SUPER</b></h3>
+            <p>"Our Supermarket discovers from farm-fresh produce to pantry staples and gourmet treats, we're here to make your shopping experience convenient, enjoyable, and full of flavor."</p>
+        </div>
+        <div class="footer-bottom">
+            <p><center>Copyright &copy; 2024 All rights reserved!</center></p>
+        </div>
+    </footer>
+
+    <script src="order.js"></script>
+    <script src="buynow.js"></script> <!-- Link to the new JavaScript file -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const popup = document.getElementById('popup');
+            const closeButton = document.getElementById('closeButton');
+            const deliveryDateSpan = document.getElementById('deliveryDate');
+
+            function getRandomDate() {
+                const start = new Date();
+                const end = new Date();
+                end.setDate(end.getDate() + 14); // Estimate delivery within 14 days
+                const randomDate = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+                return randomDate.toDateString(); // Returns date as string
+            }
+
+            function showPopup() {
+                deliveryDateSpan.textContent = getRandomDate();
+                popup.style.display = 'flex';
+            }
+
+            function hidePopup() {
+                popup.style.display = 'none';
+            }
+
+            closeButton.addEventListener('click', hidePopup);
+
+            // Optional: Close popup when clicking outside of it
+            window.addEventListener('click', (event) => {
+                if (event.target === popup) {
+                    hidePopup();
+                }
+            });
+
+            // Form submission handling to show popup
+            window.handleOrderSubmit = (event) => {
+                event.preventDefault(); // Prevent the form from submitting
+                const form = event.target;
+
+                // Check if the form is valid
+                if (form.checkValidity()) {
+                    showPopup();
+                } else {
+                    form.reportValidity(); // Show validation errors
+                }
+
+                return false; // Prevent actual form submission
+            };
+        });
+    </script>
+</body>
+</html
