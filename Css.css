@@ -1240,3 +1240,38 @@ footer{
   font-size: 18px;
   cursor: pointer;
 }
+
+
+/* msg box */
+
+/* Add card styles */
+.confirmation-card {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #faf3b8;
+}
+
+.confirmation-card h3 {
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+
+.confirmation-card p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.confirmation-card a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+}
+
+.confirmation-card a:hover {
+  text-decoration: underline;
+}

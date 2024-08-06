@@ -25,6 +25,15 @@ document.addEventListener('DOMContentLoaded', () => {
     displayOrderDetails();
 });
 
+//popup
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const deliveryDate = urlParams.get('deliveryDate');
+    if (deliveryDate) {
+        document.getElementById('deliveryDate').textContent = deliveryDate;
+    }
+});
+
 
 
 

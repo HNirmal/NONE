@@ -147,7 +147,7 @@
             const popup = document.getElementById('popup');
             const closeButton = document.getElementById('closeButton');
             const deliveryDateSpan = document.getElementById('deliveryDate');
-
+    
             function getRandomDate() {
                 const start = new Date();
                 const end = new Date();
@@ -155,40 +155,43 @@
                 const randomDate = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
                 return randomDate.toDateString(); // Returns date as string
             }
-
+    
             function showPopup() {
                 deliveryDateSpan.textContent = getRandomDate();
                 popup.style.display = 'flex';
             }
-
+    
             function hidePopup() {
                 popup.style.display = 'none';
             }
-
+    
             closeButton.addEventListener('click', hidePopup);
-
+    
             // Optional: Close popup when clicking outside of it
             window.addEventListener('click', (event) => {
                 if (event.target === popup) {
                     hidePopup();
                 }
             });
-
+    
             // Form submission handling to show popup
             window.handleOrderSubmit = (event) => {
                 event.preventDefault(); // Prevent the form from submitting
                 const form = event.target;
-
+    
                 // Check if the form is valid
                 if (form.checkValidity()) {
-                    showPopup();
+                    const deliveryDate = getRandomDate();
+                    const confirmationPageUrl = `order_confirmation.html?deliveryDate=${encodeURIComponent(deliveryDate)}`;
+                    window.location.href = confirmationPageUrl;
                 } else {
                     form.reportValidity(); // Show validation errors
                 }
-
+    
                 return false; // Prevent actual form submission
             };
         });
     </script>
+    
 </body>
 </html
